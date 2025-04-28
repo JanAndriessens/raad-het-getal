@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Raad het Getal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+            margin-top: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #006400;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Raad het Getal!</h1>
+    <p>Kies een getal tussen 1 en 100.</p>
+
+    <form method="post">
+        <input type="text" name="gok" placeholder="Jouw gok">
+        <br>
+        <input type="submit" value="Raad!">
+    </form>
+
+    {% if boodschap %}
+        <h2>{{ boodschap }}</h2>
+    {% endif %}
+
+</body>
+<script>
+    window.onload = function() {
+        document.getElementsByName("gok")[0].focus();
+    };
+</script>
+</html>
